@@ -1,0 +1,11 @@
+--- CoinUtils-2.9.17/CoinUtils/Makefile.am.orig	2013-07-12 14:15:37.000000000 +0200
++++ CoinUtils-2.9.17/CoinUtils/Makefile.am	2014-11-27 17:11:31.335742540 +0100
+@@ -71,7 +71,7 @@
+ install-data-hook:
+ 	@$(mkdir_p) "$(addlibsdir)"
+ if COIN_HAS_PKGCONFIG
+-	PKG_CONFIG_PATH="@COIN_PKG_CONFIG_PATH@" \
++	PKG_CONFIG_PATH="$$(echo @COIN_PKG_CONFIG_PATH@ | sed -e "s@^@$(DESTDIR)@;s@:@:$(DESTDIR)@g")" \
+ 	"$(PKG_CONFIG)" --libs coinutils > $(addlibsdir)/coinutils_addlibs.txt
+ else
+ if COIN_CXX_IS_CL
