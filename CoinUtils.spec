@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	static_libs	# don't build static libraries
-#
+
 Summary:	COIN-OR Utilities library
 Summary(pl.UTF-8):	Biblioteka narzędziowa COIN-OR Utilities
 Name:		CoinUtils
 Version:	2.9.17
-Release:	2
+Release:	3
 License:	Eclipse Public License v1.0
 Group:		Libraries
 Source0:	http://www.coin-or.org/download/source/CoinUtils/%{name}-%{version}.tgz
@@ -77,6 +77,9 @@ Statyczna biblioteka CoinUtils.
 Summary:	CoinUtils API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki CoinUtils
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for CoinUtils library.
