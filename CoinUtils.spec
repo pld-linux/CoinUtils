@@ -7,7 +7,7 @@ Summary:	COIN-OR Utilities library
 Summary(pl.UTF-8):	Biblioteka narzędziowa COIN-OR Utilities
 Name:		CoinUtils
 Version:	2.9.17
-Release:	3
+Release:	4
 License:	Eclipse Public License v1.0
 Group:		Libraries
 Source0:	http://www.coin-or.org/download/source/CoinUtils/%{name}-%{version}.tgz
